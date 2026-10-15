@@ -33,7 +33,7 @@
                     <span class="rounded-full border border-violet-300/20 bg-violet-300/10 px-3 py-1.5 text-[10px] font-semibold text-violet-200">Acceso fan</span>
                 </div>
 
-                <form class="mt-6 space-y-5" action="{{ route('register') }}" method="POST">
+                <form class="mt-6 space-y-5" action="{{ route('register.store') }}" method="POST">
                     @csrf
 
                     <x-form-input

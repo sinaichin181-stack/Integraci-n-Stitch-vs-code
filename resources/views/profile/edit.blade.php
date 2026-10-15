@@ -25,7 +25,9 @@
                     <div class="relative z-10 -mt-12 mb-6 flex flex-wrap items-end justify-between gap-4">
                         <div class="flex items-end gap-4">
                             <div class="flex size-24 items-center justify-center overflow-hidden rounded-full border-4 border-[#11131e] bg-gradient-to-br from-fuchsia-500 to-violet-700 text-2xl font-extrabold text-white shadow-lg shadow-black/30">
-                                @if (file_exists(public_path('images/profile-avatar.jpg')))
+                                @if (auth()->user()?->avatar_path)
+                                    <img src="{{ asset('storage/' . auth()->user()->avatar_path) }}" alt="Avatar de {{ auth()->user()->name }}" class="size-full object-cover">
+                                @elseif (file_exists(public_path('images/profile-avatar.jpg')))
                                     <img src="{{ asset('images/profile-avatar.jpg') }}" alt="Avatar de {{ auth()->user()?->name ?? 'usuario' }}" class="size-full object-cover">
                                 @else
                                     <span aria-hidden="true">FU</span>

@@ -19,7 +19,7 @@
                     <p class="mt-2 text-sm text-slate-400">Tus historias y tu fandom te estaban esperando.</p>
                 </div>
 
-                <form action="{{ route('login') }}" method="POST" class="space-y-5">
+                <form action="{{ route('login.store') }}" method="POST" class="space-y-5">
                     @csrf
 
                     @error('auth')

@@ -22,6 +22,14 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'handle',
+        'bio',
+        'city',
+        'avatar_path',
+        'favorite_actor',
+        'favorite_genre',
+        'updates',
+        'terms_accepted_at',
     ];
 
     /**
@@ -44,6 +52,8 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'updates' => 'boolean',
+            'terms_accepted_at' => 'datetime',
         ];
     }
 }
